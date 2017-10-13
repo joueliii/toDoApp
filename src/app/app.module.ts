@@ -8,12 +8,28 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { FirebaseProvider } from '../providers/firebase/firebase';
  
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyANDYVRG5pKaB-SJY4N3BR3-1F9ydCqZ6Q",
+  authDomain: "todo-dodo-83933.firebaseapp.com", 
+  databaseURL: "https://todo-dodo-83933.firebaseio.com", 
+  projectId: "todo-dodo-83933", 
+  storageBucket: "", 
+  messagingSenderId: "8096283809"
+};
+
 @NgModule({
   declarations: [
     MyApp
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
