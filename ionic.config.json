@@ -1,6 +1,6 @@
 {
   "name": "toDoApp",
-  "app_id": "",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {},
+  "app_id": "98d4272e"
 }

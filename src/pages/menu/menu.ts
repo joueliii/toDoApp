@@ -26,9 +26,9 @@ export class MenuPage {
   @ViewChild(Nav) nav: Nav;
  
   pages: PageInterface[] = [
-    { title: 'Members Area Home', pageName: 'TabsPage', tabComponent: 'Tab1Page', index: 0, icon: 'home' },
-    { title: 'Contacts', pageName: 'TabsPage', tabComponent: 'Tab2Page', index: 1, icon: 'contacts' },
-    { title: 'Special', pageName: 'SpecialPage', icon: 'shuffle' },
+    { title: 'To-Do Dodo', pageName: 'TabsPage', tabComponent: 'Tab1Page', index: 0, icon: 'list' },
+    { title: 'Dodo Notes', pageName: 'TabsPage', tabComponent: 'Tab2Page', index: 1, icon: 'clipboard' },
+    { title: 'About', pageName: 'SpecialPage', icon: 'information-circle' },
   ];
  
   constructor(public navCtrl: NavController, private auth: AuthService) { 
