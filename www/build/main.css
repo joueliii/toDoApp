@@ -25526,6 +25526,7 @@ page-login .login-content .login-box {
   background: #212121;
   margin-top: 30px;
   border: 1px solid #ffffff;
+  padding-top: 5px;
 }
 
 page-login .login-content ion-row {
@@ -25546,7 +25547,7 @@ page-login .login-content ion-item {
 
 page-login .login-content .signup-col {
   margin: 0px 16px 0px 16px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 page-login .login-content .item-inner {
@@ -25621,9 +25622,11 @@ page-register .login-content .submit-btn {
 }
 
 page-tab1 .toolbar-background {
-  background-color: #FF5252;
+  background: -webkit-gradient(linear, left top, right top, from(#7C4DFF), to(#00E5FF));
+  background: linear-gradient(to right, #7C4DFF 0%, #00E5FF 100%);
 }
 
 page-tab2 .toolbar-background {
-  background-color: #FF5252;
+  background: -webkit-gradient(linear, left top, right top, from(#00E5FF), to(#B2FF59));
+  background: linear-gradient(to right, #00E5FF 0%, #B2FF59 100%);
 }
