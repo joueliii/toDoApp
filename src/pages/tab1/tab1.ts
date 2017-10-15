@@ -34,8 +34,8 @@ export class Tab1Page {
     this.firebaseProvider.addItem(this.newItem);
   }
   
-  removeItem() {
-    this.firebaseProvider.removeItem(name);
+  removeItem(id) {
+    this.firebaseProvider.removeItem(id);
   }
 
 
