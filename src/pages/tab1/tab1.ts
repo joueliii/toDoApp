@@ -1,6 +1,9 @@
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
+import { FirebaseListObservable } from 'angularfire2/database';
+import { FirebaseProvider } from './../../providers/firebase/firebase'
 /**
  * Generated class for the Tab1Page page.
  *
@@ -16,11 +19,26 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 export class Tab1Page {
   username = '';
   email = '';
-  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService) {
+  toDoList: FirebaseListObservable<any[]>;
+  newItem: '';
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, public firebaseProvider: FirebaseProvider) {
     let info = this.auth.getUserInfo();
     this.username = info['name'];
     this.email = info['email'];
+    this.toDoList = this.firebaseProvider.getToDoList();
   }
+
+  addItem() {
+    this.firebaseProvider.addItem(this.newItem);
+  }
+  
+  removeItem() {
+    this.firebaseProvider.removeItem(name);
+  }
+
+
 
   public logout() {
     this.auth.logout().subscribe(succ => {
