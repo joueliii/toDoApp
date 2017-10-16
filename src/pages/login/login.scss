@@ -11,6 +11,8 @@ page-login {
         margin-top: 50px;
         border: 1px solid #212121;
         padding-top: 5px;
+        background: #212121;
+        border: 1px solid #ffffff;
     }
     
     ion-row {
@@ -32,14 +34,15 @@ page-login {
     .item-inner {
     box-shadow: none !important;
     }
+
     .submit-btn {
-    background: rgba(0, 0, 0, 0);
+    background: #212121;
     border: 1px solid #ffffff;
     border-radius: 2px;
     }
     
     .register-btn {
-    color: #212121;
+    color: #ffffff;
     font-size: 0.8em;
     }
 
