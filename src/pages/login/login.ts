@@ -1,42 +1,31 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
- 
+import { User } from '../../models/user';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  loading: Loading;
-  registerCredentials = { email: '', password: '' };
+
+  user = {} as User;
  
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController) { }
+ 
+  constructor(private nav: NavController, private afAuth: AngularFireAuth, private alertCtrl: AlertController) { }
  
   public createAccount() {
     this.nav.push('RegisterPage');
   }
  
   public login() {
-    this.showLoading()
-    this.auth.login(this.registerCredentials).subscribe(allowed => {
-      if (allowed) {        
-        this.nav.setRoot('MenuPage');
-      } else {
-        this.showError("Access Denied");
-      }
-    },
-      error => {
-        this.showError(error);
-      });
+    
   }
  
   showLoading() {
-    this.loading = this.loadingCtrl.create({
-      content: 'Please wait...',
-      dismissOnPageChange: true
-    });
-    this.loading.present();
+    
   }
  
   showError(text) {
