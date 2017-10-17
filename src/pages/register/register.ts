@@ -10,8 +10,7 @@ import { User } from '../../models/user';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-  createSuccess = false;
-  registerCredentials = { email: '', password: '' };
+
   user = {} as User;
  
   constructor(private nav: NavController, private afAuth: AngularFireAuth, private alertCtrl: AlertController) { }
@@ -21,7 +20,11 @@ export class RegisterPage {
  
   async register(user: User) {
 
-  const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+  const result2 = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+
+    if (result2) {
+      this.nav.setRoot('LoginPage')
+    }
   }
   
 }
