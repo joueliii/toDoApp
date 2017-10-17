@@ -20,9 +20,12 @@ export class LoginPage {
     this.nav.push('RegisterPage');
   }
  
-  login(user: User) {
-    const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+  public login() {
+    const result = this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+
+    if (result) {
+      this.nav.setRoot('MenuPage')
+    }
   }
- 
  
 }

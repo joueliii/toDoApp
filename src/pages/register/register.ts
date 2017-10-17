@@ -12,13 +12,14 @@ import { User } from '../../models/user';
 export class RegisterPage {
   createSuccess = false;
   registerCredentials = { email: '', password: '' };
+  user = {} as User;
  
   constructor(private nav: NavController, private afAuth: AngularFireAuth, private alertCtrl: AlertController) { }
  
 
 
  
-  register(user: User) {
+  async register(user: User) {
 
   const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
   }
