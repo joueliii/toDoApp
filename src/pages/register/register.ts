@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import {AngularFireAuth} from "angularfire2/auth";
- 
+import { User } from '../../models/user';
+
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -14,9 +15,12 @@ export class RegisterPage {
  
   constructor(private nav: NavController, private afAuth: AngularFireAuth, private alertCtrl: AlertController) { }
  
-  public register() {
-    
-  }
+
+
  
+  register(user: User) {
+
+  const result = this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
+  }
   
 }

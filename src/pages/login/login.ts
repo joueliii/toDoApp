@@ -20,22 +20,9 @@ export class LoginPage {
     this.nav.push('RegisterPage');
   }
  
-  public login() {
-    
+  login(user: User) {
+    const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
   }
  
-  showLoading() {
-    
-  }
  
-  showError(text) {
-    this.loading.dismiss();
- 
-    let alert = this.alertCtrl.create({
-      title: 'Fail',
-      subTitle: text,
-      buttons: ['OK']
-    });
-    alert.present(prompt);
-  }
 }
