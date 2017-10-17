@@ -24,9 +24,7 @@ export class Tab1Page {
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthService, public firebaseProvider: FirebaseProvider) {
-    let info = this.auth.getUserInfo();
-    this.username = info['name'];
-    this.email = info['email'];
+  
     this.toDoList = this.firebaseProvider.getToDoList();
   }
 

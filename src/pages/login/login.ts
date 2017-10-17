@@ -21,7 +21,7 @@ export class LoginPage {
   }
  
   public login() {
-    const result = this.afAuth.auth.createUserWithEmailAndPassword(this.user.email, this.user.password);
+    const result = this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.password);
 
     if (result) {
       this.nav.setRoot('MenuPage')
