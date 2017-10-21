@@ -7,7 +7,6 @@
 <ion-content class="login-content" padding>
   <div class="login-box">
     
-    <form (ngSubmit)="register()" #registerForm="ngForm">
       <ion-row>
         <ion-col>
           <ion-list inset>
@@ -26,10 +25,8 @@
       
       <ion-row>
         <ion-col class="signup-col">
-          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+          <button ion-button class="submit-btn" full type="submit" (click)="register(user)">Register</button>
         </ion-col>
       </ion-row>
-      
-    </form>
   </div>
 </ion-content>
