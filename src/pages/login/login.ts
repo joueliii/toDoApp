@@ -20,8 +20,11 @@ export class LoginPage {
     this.nav.push('RegisterPage');
   }
  
-  login(user: User) {
-    const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+  async login(user: User) {
+    const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password)
+    if (result) {
+      this.nav.setRoot('TabsPage');
+    }
   }
  
  
