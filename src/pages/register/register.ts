@@ -17,7 +17,7 @@ export class RegisterPage {
  
 
 
- 
+ // Register button fires up this function which passes the form data to the firebase database, pretty nifty -Saku
   async register(user: User) {
 
   const result2 = await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password);
