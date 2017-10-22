@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the Tab2Page page.
@@ -18,7 +19,7 @@ export class Tab3Page {
   nav: any;
   auth: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth2: AngularFireAuth) {
   }
 
   ionViewDidLoad() {
@@ -26,8 +27,8 @@ export class Tab3Page {
   }
 
   public logout() {
-    this.afAuth.logout().subscribe(succ => {
-      this.nav.setRoot('LoginPage')
+    this.afAuth2.auth.signOut().then(succ => {
+      this.navCtrl.setRoot('LoginPage')
     });
   }
 
