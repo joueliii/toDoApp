@@ -29,6 +29,7 @@ export class Tab3Page {
   public logout() {
     this.afAuth2.auth.signOut().then(succ => {
       this.navCtrl.parent.parent.setRoot('LoginPage')
+      //'parent' definition added so that tabs aren't seen when logged out -Joel
     });
   }
 
