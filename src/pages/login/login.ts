@@ -4,6 +4,7 @@ import { AuthService } from '../../providers/auth-service/auth-service';
 import { User } from '../../models/user';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -15,7 +16,7 @@ export class LoginPage {
  
  
   constructor(private nav: NavController, private afAuth: AngularFireAuth, private alertCtrl: AlertController) { }
- 
+
   public createAccount() {
     this.nav.push('RegisterPage');
   }

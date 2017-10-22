@@ -28,7 +28,7 @@ export class Tab3Page {
 
   public logout() {
     this.afAuth2.auth.signOut().then(succ => {
-      this.navCtrl.setRoot('LoginPage')
+      this.navCtrl.parent.parent.setRoot('LoginPage')
     });
   }
 
